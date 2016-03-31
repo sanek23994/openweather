@@ -1,0 +1,8 @@
+project(openweather)
+cmake_minimum_required(VERSION 2.8)
+aux_source_directory(. SRC_LIST)
+add_executable(${PROJECT_NAME} ${SRC_LIST})
+target_include_directories(${PROJECT_NAME} PUBLIC lib/)
+add_subdirectory(lib/cpr)
+include_directories(${CPR_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME} ${CPR_LIBRARIES})
